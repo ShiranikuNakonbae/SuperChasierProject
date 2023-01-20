@@ -1,6 +1,6 @@
 # %%
 # Import library needed for this to work
-from superchasier2 import Transactions
+from superchasier import Transactions
 import warnings
 
 # Ignore future warnings
