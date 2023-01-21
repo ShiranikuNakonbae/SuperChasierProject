@@ -15,7 +15,7 @@ Pada halaman muka, pengguna diminta unutk memasukkan nomor sesuai dengan menu ya
 5. Check order          : untuk melihat keranjang belanja, apakah sudah sesuia dengan apa yang diharapkan pengguna.
 6. Checkout cart        : untuk mengkahiri proses pembelanjaan dan melakukan finalisasi pembayaran dengan menampilkan total harga beserta diskon (jika memenuhi minimal pembelanjaan).
 
-Bila pengguna belum memasukkan item ke dalam keranjang, maka selain menu Add items, akan menampilkan pesan bahwa keranjang masih kosong.
+Bila pengguna belum memasukkan item ke dalam keranjang, maka selain menu Add items akan menampilkan pesan bahwa keranjang masih kosong.
 
 ## Diagram alur
 
@@ -41,19 +41,19 @@ fungsi reset_item digunakan unutk menghapus semua item yang telah dimasukkan ke 
 
 ## Uji kasus
 
-1. Menambahkan item ke dalam keranjang
+### Menambahkan item ke dalam keranjang
 
 ![additem](https://user-images.githubusercontent.com/33124796/213457976-2729634d-6f1b-4ae0-a787-313234f46299.png)
 
-2. Menghapus satu item
+### Menghapus satu item
 
 ![deleteitem](https://user-images.githubusercontent.com/33124796/213458358-dbb66f84-a868-4b8b-ab53-713890df139e.png)
 
-3. Mereset keranjang
+### Mereset keranjang
 
 ![resetitem](https://user-images.githubusercontent.com/33124796/213458439-977dab0f-61df-4c4c-97b5-808b23c7224e.png)
 
-4. Checkout
+### _Checkout_
 
 ![checkoutcart](https://user-images.githubusercontent.com/33124796/213458570-ad8215e8-93b2-4d9d-9bb0-916578c7852d.png)
 
@@ -67,4 +67,5 @@ Secara umum program berjalan seperti yang diharapkan. Dengan tampilan menu yang 
 
 ## Saran perbaikan
 
-Pass.
+1. Akan lebih memudahkan untuk dibaca bila setiap pemilihan menu dilakukan _clear screen_.
+2. Keranjang belanja belum terkoneksi dengan _database_, sehingga setiap transaksi belum terekam dengan baik.
