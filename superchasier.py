@@ -44,6 +44,7 @@ class Transactions:
         '''
         # try to make item name as index
         self.df = pd.DataFrame(columns=self.column_names)  
+
     
     def is_true(self):
         '''
@@ -56,6 +57,7 @@ class Transactions:
             return True
         else:
             return False
+
     
     def display_cart(self):
         '''
@@ -65,6 +67,7 @@ class Transactions:
         '''
         print_cart = self.df.to_markdown(tablefmt="fancy_grid", index=False)
         return print(print_cart)
+
 
     def add_item(self, item_name, item_count, item_price):
         '''
@@ -90,6 +93,7 @@ class Transactions:
             self.display_cart() # Calling display_cart function.
         else:
             print('Invalid input. Please enter a valid positive whole number for item_count and item_price.')
+
         
     def update_item_name(self, item_name, new_item):
         '''
@@ -114,6 +118,7 @@ class Transactions:
                     print(f'{item_name} is not in the list. Can not do further update. Please check item again.')
         else:
             print(self.empty_cart_msg)
+
 
     def update_item_count(self, item_name, new_count): 
         '''
@@ -140,6 +145,7 @@ class Transactions:
                 print(f'Please enter new name for item name or a positive whole number for new count.')
         else:
             print(self.empty_cart_msg)
+
     
     def update_item_price(self, item_name, new_price):
         '''
@@ -167,6 +173,7 @@ class Transactions:
     
         else:
             print(self.empty_cart_msg)
+
     
     def delete_item(self, item_name):
         '''
@@ -209,6 +216,7 @@ class Transactions:
 
         else:
             print(self.empty_cart_msg)
+            
 
     def check_order(self):
         if self.is_true():
