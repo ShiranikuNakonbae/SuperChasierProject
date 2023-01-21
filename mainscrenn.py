@@ -16,10 +16,10 @@ trx = Transactions()
 
 def is_true_main():
     '''
-    A boolean function that returns True if the cart is not empty, otehrwise false.
+    A boolean function that returns True if the cart is not empty, otherwise false.
     It was being used by all functions except add_item_main.
 
-    The purpose is to encorage user that other functions are not available if add_item_main not executed yet.
+    The purpose is to encourage user that other functions are not available if add_item_main not executed yet.
     '''
     if (trx.is_true()):
         pass
@@ -27,13 +27,14 @@ def is_true_main():
         print(isNotCartMsg)
         main()
 
+
 def add_item_main():
     '''
     A function to add a new item to the cart.
 
     Parameters:
-    User will be prompted to enter a item name, item count/quantity, and item price, as long as they answer yes afterwards.
-    If the user's answer is no, it will be go back to main screen.
+    User will be prompted to enter an item name, item count/quantity, and item price, as long as they answer yes afterward.
+    If the user's answer is no, it will be going back to main screen.
 
     Input:
     itemName [string] - The name of the item.
@@ -45,7 +46,7 @@ def add_item_main():
     Then all those values will be passed to add_item function in Transactions class.
 
     Output:
-    It will print out a table containing it's itemName, itemCount, itemPrice, and total.
+    It will print out a table containing its itemName, itemCount, itemPrice, and total.
 
     '''
     flag = True
@@ -68,6 +69,7 @@ def add_item_main():
         else:
             continue
 
+
 def update_item_main(): 
     '''
     A function to update/modify user's cart.
@@ -77,18 +79,18 @@ def update_item_main():
     Choices are given to the user for updating itemName, itemCount, or itemPrice they have entered in add_item function.
 
     Input:
-    oldItem [String] - The itemName entered in the cart user want to update.
+    oldItem [String] - The itemName entered the cart user want to update.
     newItem [String] - The new itemName will be entered to the cart.
     newCount [String] - The new itemName's itemCount will be entered to the cart.
     newPrice [String] - The new itemName's itemPrice will be entered to the cart.
 
     Process::
     1. For updating itemName, user should enter exactly the itemName as oldItem and enter the new ItemName as newItem.
-    Both name will be passed to update_item_name function in class Transactions.
+    Both names will be passed to update_item_name function in class Transactions.
     2. For updating itemCount, user should enter exactly the itemName and enter the newCount.
-    Both name will be passed to update_item_count function in class Transactions.
+    Both names will be passed to update_item_count function in class Transactions.
     3. For updating itemPrice, user should enter exactly the itemName and enter the newPrice.
-    Both name will be passed to update_item_price function in class Transactions.
+    Both names will be passed to update_item_price function in class Transactions.
 
     Output:
     An updated cart.
@@ -133,13 +135,14 @@ def update_item_main():
         except ValueError:
             print(invalidInputMsg)
 
+
 def delete_item_main():
     '''
     A function that delete a single item in the cart.
 
     Parameters:
     A cart will be displayed for reference.
-    There is a condition that will check if the cart is empty or not.
+    There is a condition that will check whether the cart is empty or not.
 
     Input:
     deleteItem [String] - The itemName user want to delete.
@@ -147,7 +150,7 @@ def delete_item_main():
     Process:
     If the cart is not empty:
     The deleteItem will be passed to delete_item method in class Transactions.
-    Then, main screen will be displayed.
+    Then, the main screen will be displayed.
     If the cart is empty:
     Main screen will be displayed.
 
@@ -168,13 +171,14 @@ def delete_item_main():
         else:
             continue
 
+
 def reset_item_main():
     '''
     A function that will reset the cart.
 
     Parameters:
     A cart will be displayed as reference.
-    There is a condition that will check if the cart is empty or not.
+    There is a condition that will check whether the cart is empty or not.
 
     Input:
     A question for user whether they really want to reset the cart.
@@ -182,9 +186,9 @@ def reset_item_main():
     Process:
     If the cart is not empty:
     And the user is answering no, main menu will be displayed.
-    Otherwise, ResetItem method is called and the cart will be cleared out.
+    Otherwise, ResetItem method is called, and the cart will be cleared out.
     If the cart is empty:
-    main menu will be displayed.
+    Main menu will be displayed.
 
     Output:
     An updated cart.
@@ -198,6 +202,7 @@ def reset_item_main():
         trx.reset_item()
         main()
 
+
 def check_order_main():
     '''
     A function that will print out user cart.
@@ -209,16 +214,18 @@ def check_order_main():
     trx.check_order()
     main()
 
+
 def checkout_main():
     '''
-    A Function that call TotalPrice function in class Transaction.
+    A function that call TotalPrice function in class Transaction.
 
     Parameters:
-    Method TotalPrice and print oout a thank you message. Then will go back to main menu.
+    Method TotalPrice and print oout a thank-you message. Then will go back to main menu.
 
     '''
     trx.checkout()
     main()
+
             
 def main():
     '''
@@ -226,7 +233,7 @@ def main():
     The store name is NAKONBAE SUPERSTORE.
 
     Parameters:
-    User will be prompted to enter a number corresponding to it's option.
+    User will be prompted to enter a number corresponding to its option.
 
     Input:
     A number entered by user and will route to its option.
@@ -236,7 +243,6 @@ def main():
     If the user input a number outside the option given, an error message will be displayed.
 
     '''
-
     while True:
         try:
             print('=====' * 10)
