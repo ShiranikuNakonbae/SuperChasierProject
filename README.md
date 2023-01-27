@@ -69,3 +69,4 @@ Secara umum program berjalan seperti yang diharapkan. Dengan tampilan menu yang 
 
 1. Akan lebih memudahkan untuk dibaca bila setiap pemilihan menu dilakukan _clear screen_.
 2. Keranjang belanja belum terkoneksi dengan _database_, sehingga setiap transaksi belum terekam dengan baik.
+3. Belum tersedianya _logic_ untuk memeriksa jika pengguna memasukkan nama item yang sama.
