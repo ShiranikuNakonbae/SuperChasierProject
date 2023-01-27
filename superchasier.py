@@ -7,6 +7,7 @@ import warnings
 # Ignore future warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
+
 # Create Transaction class
 class Transactions:
     '''
@@ -82,7 +83,7 @@ class Transactions:
         self.item_count = item_count
         self.item_price = item_price
 
-        if (isinstance(item_count, int) and item_count > 0) and (isinstance(item_price, int) and item_price > 0): # Checking user input. Whether the input was positif integer or not.
+        if (isinstance(item_count, int) and item_count > 0) and (isinstance(item_price, int) and item_price > 0) and (isinstance(item_name, str)): # Checking user input. Whether the input was positif integer or not.
             total_item = item_count * item_price
             self.df = self.df.append({
                 'Item' : item_name,
@@ -92,7 +93,7 @@ class Transactions:
             }, ignore_index=True)
             self.display_cart() # Calling display_cart function.
         else:
-            print('Invalid input. Please enter a valid positive whole number for item_count and item_price.')
+            print('Invalid input. Please enter a valid name for item name and a valid positive whole number for item count and item price.')
 
         
     def update_item_name(self, item_name, new_item):
