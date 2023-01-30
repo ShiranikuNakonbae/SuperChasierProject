@@ -1,6 +1,7 @@
-# %%
 # Import library needed for this to work
 from superchasier import Transactions
+from platform   import system as system_name  # Returns the system/OS name
+from subprocess import call   as system_call  # Execute a shell command
 import warnings
 
 # Ignore future warnings
@@ -49,6 +50,7 @@ def add_item_main():
     It will print out a table containing its itemName, itemCount, itemPrice, and total.
 
     '''
+    clear_screen() # Clear the main screen
     flag = True
     while flag: # While the flag is True, the code below will be executed continuously.
         try: # Control user input so that the input should match the requirements.
@@ -65,6 +67,7 @@ def add_item_main():
             print(isCartMsg)
             trx.display_cart() # Call display_cart function in class Transactions to print out a cart table.
             flag = False # To break the while loop.
+            clear_screen() # Clear the main screen
             main() # And go back to main menu.
         else:
             continue
@@ -96,6 +99,7 @@ def update_item_main():
     An updated cart.
 
     '''
+    clear_screen() # Clear the main screen
     trx.display_cart() # Call display_cart function in Transaction  class to print out a cart.
     flag = True
     while flag: # While the flag is True, the code below will be executed continuously.
@@ -128,6 +132,7 @@ def update_item_main():
                 continue
             elif select == 0:
                 flag = False # Break the while loop
+                clear_screen() # Clear the main screen
                 main()
             else:
                 print('You have entered a wrong value. Try again with 1, 2, 3, 4, or 0.')
@@ -158,6 +163,7 @@ def delete_item_main():
     An updated cart.
 
     '''
+    clear_screen() # Clear the main screen
     trx.display_cart() # Call dispaly_cart function in Transactions class to print out a cart table.
     flag = True
     while flag:
@@ -167,6 +173,7 @@ def delete_item_main():
         is_true_main()
         if not input('Do you want to delete another item? (yes/no) > ').lower().startswith('y'):
             flag = False
+            clear_screen() # Clear the main screen
             main()
         else:
             continue
@@ -194,12 +201,15 @@ def reset_item_main():
     An updated cart.
 
     '''
+    clear_screen() # Clear the main screen
     trx.display_cart()
     print('Do you want to reset the order? (yes/no): ')
     if not input('> ').lower().startswith('y'):
+        clear_screen() # Clear the main screen
         main()
     else:
         trx.reset_item()
+        clear_screen() # Clear the main screen
         main()
 
 
@@ -211,7 +221,9 @@ def check_order_main():
     Calling out CheckOrder method and go back to main menu.
 
     '''
+    clear_screen() # Clear the main screen
     trx.check_order()
+    input('Press enter to go back to main menu > ').lower().startswith(' ')
     main()
 
 
@@ -223,6 +235,7 @@ def checkout_main():
     Method TotalPrice and print oout a thank-you message. Then will go back to main menu.
 
     '''
+    clear_screen() # Clear the main screen
     trx.checkout()
     main()
 
@@ -283,6 +296,15 @@ def main():
             print('You have entered a wrong value. Try again with number: 1, 2, 3, 4, 5, 6, or 0 for exit.')
 
 
+def clear_screen():
+    """
+    Clears the terminal screen.
+    """
+    # Clear screen command as function of OS
+    command = 'cls' if system_name().lower().startswith('win') else 'clear'
+    # Action
+    system_call([command])
+
+
 if __name__ == "__main__": # To start main() when the file is being executed in pyhton.
     main()
-# %%
