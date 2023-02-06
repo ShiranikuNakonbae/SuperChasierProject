@@ -113,21 +113,25 @@ def update_item_main():
         try:
             select = int(input("Enter your selection > "))
             if select == 1:
+                clear_screen()
                 oldItem  = input('Enter item name to be updated: ')
                 newItem = input('Enter a new item name: ')
                 trx.update_item_name(oldItem, newItem)
                 continue
             elif select == 2:
+                clear_screen()
                 oldItem  = input('Enter item name to be updated: ')
                 newCount = input('Enter new count for the item name: ')
                 trx.update_item_count(oldItem, int(newCount))
                 continue
             elif select == 3:
+                clear_screen()
                 oldItem  = input('Enter item name to be updated: ')
                 newPrice = input('Enter new price for the item name: ')
                 trx.update_item_price(oldItem, int(newPrice))
                 continue
             elif select == 4:
+                clear_screen()
                 trx.display_cart() # Call display_cart function in Transactions class to print out a cart.
                 continue
             elif select == 0:
@@ -237,6 +241,7 @@ def checkout_main():
     '''
     clear_screen() # Clear the main screen
     trx.checkout()
+    input('Press enter to go back to main menu > ').lower().startswith(' ')
     main()
 
             
